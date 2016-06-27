@@ -43,8 +43,8 @@ class SigoServiceProvider extends ServiceProvider
         ], 'config');
 
         $this->publishes([
-            __DIR__.'/../../public/assets' => public_path('vendor/sigo'),
-        ], 'public');
+            __DIR__.'/../../public/assets/css' => public_path('assets/css'),
+        ], 'public-css');
 
         $this->publishes([
             __DIR__.'/../../database/migrations/' => database_path('migrations')
