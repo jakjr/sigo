@@ -4,6 +4,7 @@ namespace Sigo\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Sigo\Support\Menu;
+use Sigo\Support\Shortcut;
 
 class SigoServiceProvider extends ServiceProvider
 {
@@ -55,9 +56,17 @@ class SigoServiceProvider extends ServiceProvider
             $view->with('menu', $menuSigoHtml . $view->menu);
         });
 
+        view()->composer('layout::master.header', function(\Illuminate\Contracts\View\View $view){
+            $shortcutSigoHtml = app(Shortcut::class)->render();
+            $view->with('shortcut', $view->shortcut . $shortcutSigoHtml);
+        });
+
+
+
         \Config::set('layout.appTitle1', \Config::get('sigo.appTitle1'));
         \Config::set('layout.appTitle2', \Config::get('sigo.appTitle2'));
         \Config::set('layout.appTitle3', 'Obter nome do órgão do usuário logado');
+        \Config::set('layout.browserTitle', \Config::get('sigo.browserTitle'));
     }
 
     /**
