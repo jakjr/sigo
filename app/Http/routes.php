@@ -1,3 +1,4 @@
 <?php
 
-Route::get('/', 'TestController@index');
+Route::resource('atendimento', 'Sigo\Http\Controllers\AtendimentoController');
+
