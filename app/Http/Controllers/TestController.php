@@ -12,8 +12,6 @@ class TestController extends Controller
 {
     public function index()
     {
-        //$c = new TestCustomController();
-        //return $c->index();
         return view('sigo::welcome');
     }
 }

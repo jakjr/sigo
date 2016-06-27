@@ -38,7 +38,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Sigo Laravel 5</div>
+                <div class="title">Sigo Laravel 5 after update</div>
             </div>
         </div>
     </body>
