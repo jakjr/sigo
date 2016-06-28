@@ -23,6 +23,13 @@ class AtendimentoController extends Controller
         return $v;
     }
 
+    public function filter(Request $r)
+    {
+        \Messenger::success('Ok: ' . $r->get('filter'));
+        return redirect()->back()->withInput();
+    }
+
+
     public function create()
     {
 
