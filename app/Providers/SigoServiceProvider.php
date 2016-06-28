@@ -51,6 +51,11 @@ class SigoServiceProvider extends ServiceProvider
             __DIR__.'/../../database/migrations/' => database_path('migrations')
         ], 'migrations');
 
+        /**
+         * Incluindo estes menus diretamente no app/menu.php
+         * Desta forma será possível uma melhor customização
+         */
+        /*
         view()->composer('layout::master.sidebar', function (\Illuminate\Contracts\View\View $view) {
             $menuSigoHtml = app(Menu::class)->compose($view);
             $view->with('menu', $menuSigoHtml . $view->menu);
@@ -59,9 +64,7 @@ class SigoServiceProvider extends ServiceProvider
         view()->composer('layout::master.header', function(\Illuminate\Contracts\View\View $view){
             $shortcutSigoHtml = app(Shortcut::class)->render();
             $view->with('shortcut', $view->shortcut . $shortcutSigoHtml);
-        });
-
-
+        });*/
 
         \Config::set('layout.appTitle1', \Config::get('sigo.appTitle1'));
         \Config::set('layout.appTitle2', \Config::get('sigo.appTitle2'));

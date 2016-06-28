@@ -30,5 +30,4 @@ class Menu extends \Celepar\Light\Menu\ViewComposers\Menu {
         return $this->render(self::$menu);
     }
 
-
 }
